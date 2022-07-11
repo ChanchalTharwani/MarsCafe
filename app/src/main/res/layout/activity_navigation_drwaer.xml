@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+<!--        Drawer layout  -->
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
+
+
+        <LinearLayout
+            android:id="@+id/main_activity_content_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+            <!--Appbar start -->
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/activity_main_appbarlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+                  <!--tooobar  start-->
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/activity_main_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    android:backgroundTint="@color/Brown"
+                    android:weightSum="1"
+                    app:contentInsetStart="0dp"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    <TextView
+                        android:id="@+id/activity_main_toolbar_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:ellipsize="marquee"
+                        android:fadingEdge="horizontal"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColor="#ff4500"
+                        android:textSize="@dimen/_18ssp" />
+
+                </androidx.appcompat.widget.Toolbar>
+                <!--tooobar  close-->
+
+            </com.google.android.material.appbar.AppBarLayout>
+            <!--app bar close-->
+            <RelativeLayout
+                android:id="@+id/activity_main_content_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false">
+
+                <FrameLayout
+                    android:id="@+id/framelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!-- Custom Navigation Drawer Start -->
+        <LinearLayout
+            android:id="@+id/navigation_layout"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/light_blue_grey"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/navigation_header_img"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/mars_logo"
+                tools:ignore="ContentDescription" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/navigation_rv"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scrollbarThumbHorizontal="@null"
+                android:scrollbarThumbVertical="@null">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+        <!-- Custom Navigation Drawer End -->
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
